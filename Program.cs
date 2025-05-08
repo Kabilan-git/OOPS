@@ -319,3 +319,57 @@ public class CallStatic
 // * We can't create a object for a static class
 // * But we can use a static method inside a non-static class
 // * We can't create a inherit a static class
+
+/// <summary>Constructor</summary>
+
+public class Office(string officeName, string officeAddress, int mobileNumber, Professor professor) // ! Primary Constructor
+{
+    public string _officeName = officeName;
+    public string _officeAddress = officeAddress;
+    public int _mobileNumber = mobileNumber;
+    public bool _isActive;
+    public DateTime _openedOn;
+    public double _revenue;
+
+    // public Office()
+    // {
+    //     _officeName = officeName;
+    //     _officeAddress = officeAddress;
+    //     _mobileNumber = mobileNumber;
+    //     _isActive = true;
+    // }
+
+    public void setOffice()
+    {
+        professor.callStudent();
+    }
+}
+public class Owner
+{
+    Professor professor = new Professor();
+    public void callMyOffice1()
+    {
+        Office office = new Office("Facebook", "Mexico", 8938938, professor);
+        Console.WriteLine(office._officeName);
+        Console.WriteLine(office._officeAddress);
+        Console.WriteLine(office._mobileNumber);
+        Console.WriteLine(office._isActive);
+        Console.WriteLine(office._revenue);
+    }
+    public void callMyOffice2()
+    {
+        Office office = new Office("Google", "Silicon valley", 8938938, professor);
+        Console.WriteLine(office._officeName);
+        Console.WriteLine(office._officeAddress);
+        Console.WriteLine(office._mobileNumber);
+        Console.WriteLine(office._isActive);
+        Console.WriteLine(office._revenue);
+    }
+
+    // * Constructor is a special method
+    // * Constructor name must be same as class Name
+    // * Constructor is use to assign the value to the initialized varables
+    // * Whenever the object is called for a class construtor will create automatically if not created. So the constructor is always there for a class if we created or not
+    // * If we create the constructor manually then every time we create the object for a class construtor will invoke.
+    // * Primary constructor is available only in C# 12 or greater.
+
