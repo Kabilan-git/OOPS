@@ -373,3 +373,34 @@ public class Owner
     // * If we create the constructor manually then every time we create the object for a class construtor will invoke.
     // * Primary constructor is available only in C# 12 or greater.
 
+
+
+    /// <summary>Access Modifiers</summary>
+    public class College
+    {
+        public void Student()
+        {
+            Console.WriteLine("Call the Student");
+        }
+        private void HOD()
+        {
+            Console.WriteLine("Call the HOD");
+        }
+        protected void Administrator()
+        {
+            Console.WriteLine("Call the Administrator");
+        }
+    }
+
+    public class Management : College
+    {
+        public void Actions()
+        {
+            College college = new College();
+            college.Student();  // * public - accesible everWhere
+            Administrator();   // * Protected - accessible withIn the class or we can inherit the class in another and we can use.
+            // college.HOD();    // * Private = only accessible within the class.
+
+        }
+    }
+
